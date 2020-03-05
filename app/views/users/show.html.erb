@@ -5,5 +5,35 @@
   <%= @user.name %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Upcoming events to attend</h2>
+<ul>
+  <% @user.upcoming_attended_events.each do |event| %>
+    <li><%= event.name %></li>
+    <li><%= event.date %></li>
+  <% end %>
+</ul>
+
+<h2>Past attended events</h2>
+<ul>
+  <% @user.past_attended_events.each do |event| %>
+    <li><%= event.name %></li>
+    <li><%= event.date %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Back', root_path%>

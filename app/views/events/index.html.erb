@@ -1,0 +1,25 @@
+<h1>Events</h1>
+<ul>
+
+
+
+<h2>Past Events</h2>
+<ul>
+<% @past_events.each do |event| %>
+
+  <li><%= link_to "#{event.name}", event %>, <%= event.date.strftime("%m/%d/%Y") %></li>
+ 
+ <% end %> 
+</ul>
+
+
+<h2>Upcoming Events</h2>
+<ul>
+<% @upcoming_events.each do |event| %>
+
+  <li><%= link_to "#{event.name}", event %>, <%= event.date.strftime("%m/%d/%Y") %></li>
+ 
+ <% end %>
+</ul>
+
+ <%= link_to 'create new event', new_event_path(@event) %>
