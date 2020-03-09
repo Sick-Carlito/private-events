@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# My comment
+
 module SessionsHelper
   def signed_in?
     !session[:creator_id].nil?
