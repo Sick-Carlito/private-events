@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # My comment
 
 class SessionsController < ApplicationController
