@@ -14,11 +14,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    return
+    @user = current_user
+    @attended_events = Event.where('creator_id = ?', @user.id)
+    @past_attended_events = User.past_attended_event
+    @upcoming_attended_events = Attendance.upcoming_attended_events(@user.id)
     if params[:id] == current_user.id
-      @user = current_user
-      @attended_events = Event.where('creator_id = ?', @user.id)
-      @past_attended_events = User.past_attended_event
-      @upcoming_attended_events = Attendance.upcoming_attended_events(@user.id)
     end
   end
 
