@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @past_attended_events = User.past_attended_event
       @upcoming_attended_events = Attendance.upcoming_attended_events(@user.id)
     else
-      redirect_to '/'
+      redirect_to root_path
     end
   end
 
