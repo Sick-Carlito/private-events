@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,37 +12,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_133852) do
-
-  create_table "attendances", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["user_id"], name: "index_attendances_on_user_id"
+ActiveRecord::Schema.define(version: 20_200_305_133_852) do
+  create_table 'attendances', force: :cascade do |t|
+    t.integer 'user_id', null: false
+    t.integer 'event_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['event_id'], name: 'index_attendances_on_event_id'
+    t.index ['user_id'], name: 'index_attendances_on_user_id'
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.date "date"
-    t.integer "creator_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "description"
-    t.integer "event_id"
-    t.index ["creator_id"], name: "index_events_on_creator_id"
+  create_table 'events', force: :cascade do |t|
+    t.string 'name'
+    t.date 'date'
+    t.integer 'creator_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'description'
+    t.integer 'event_id'
+    t.index ['creator_id'], name: 'index_events_on_creator_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'password_digest'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'password'
   end
 
-  add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "users"
-  add_foreign_key "events", "users", column: "creator_id"
+  add_foreign_key 'attendances', 'events'
+  add_foreign_key 'attendances', 'users'
+  add_foreign_key 'events', 'users', column: 'creator_id'
 end
