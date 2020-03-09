@@ -16,11 +16,6 @@ class UsersController < ApplicationController
       @past_attended_events = User.past_attended_event
       @upcoming_attended_events = Attendance.upcoming_attended_events(@user.id)
     end
-    
-    # @user = User.find(params[:id])
-    # @attended_events = current_user.attendances
-    # @upcoming_attended_events = current_user.upcoming_attended_events
-    # @past_attended_events = current_user.past_attended_events
   end
 
   # GET /users/new
@@ -62,41 +57,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
-=begin
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-
-  def invite
-    @user = User.find_by(params[:id])
-    @event = Event.find(params[:event_id])
-    invited_guests = params[:invitation][:users].strip.split(',').map(&:strip)
-    
-    invited_guests.each do |invited_guest|
-      user = User.find_by(name: invited_guest)
-      @user.invite(user, @event) if user
-    end
-
-    redirect_to event_url(@event)
-  end
-=end
-
-
-  # def attendances
-  #   @user = User.find(params[:id])
-  #   @event = Event.find(params[:event_id])
-  #   @user.attend(@event) if event.include?(@user)
-
-  #   redirect_to user_path(@user)
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
