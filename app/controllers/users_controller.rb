@@ -14,12 +14,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id] == @user.id
+    return
       @user = User.find(params[:id])
       @attended_events = Event.where('user_id = ?', @user.id)
       @past_attended_events = @user.past_attended_event
       @upcoming_attended_events = @user.upcoming_attended_events
-    end
+      if params[:id] == @user.id
+      end
   end
 
   # GET /users/new
