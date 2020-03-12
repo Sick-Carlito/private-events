@@ -17,7 +17,7 @@ To run it, clone this repository locally, and run these commands on your termina
 ```
 Git clone git@github.com:Sick-Carlito/private-events.git
 
-cd ~/members-only
+cd ~/private-events
 rails s
 
 ```

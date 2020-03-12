@@ -3,11 +3,11 @@
 # My comment
 
 module SessionsHelper
-  def signed_in?
-    !session[:creator_id].nil?
+  def sign_in(user_id)
+    session[:user_id] = user_id
   end
 
   def current_user
-    signed_in? ? User.find(session[:creator_id]) : nil
+    User.find(session[:user_id])
   end
 end

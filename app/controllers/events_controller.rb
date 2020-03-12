@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       @event.save
       @attendance = Attendance.new(user: current_user, event: @event)
       @attendance.save if @attendance.valid?
-      redirect_to root_path
+      redirect_to @event
     else
       render 'new'
     end

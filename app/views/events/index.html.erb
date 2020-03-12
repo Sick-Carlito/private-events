@@ -1,5 +1,13 @@
 <h1>Events</h1>
 
+<h2>Created Events</h2>
+<ul>
+<% @events.each do |event| %>
+
+  <li><%= link_to "#{event.name}", event %>, <%= event.date.strftime("%m/%d/%Y") %></li>
+ 
+ <% end %> 
+</ul>
 
 <h2>Past Events</h2>
 <ul>

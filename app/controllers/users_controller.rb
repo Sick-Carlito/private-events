@@ -14,13 +14,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id] == current_user.id
-      @user = current_user
-      @attended_events = Event.where('creator_id = ?', @user.id)
-      @past_attended_events = User.past_attended_event
-      @upcoming_attended_events = Attendance.upcoming_attended_events(@user.id)
-    else
-      redirect_to root_path
+    if params[:id] == @user.id
+      @user = User.find(params[:id])
+      @attended_events = Event.where('user_id = ?', @user.id)
+      @past_attended_events = @user.past_attended_event
+      @upcoming_attended_events = @user.upcoming_attended_events
     end
   end
 
@@ -67,7 +65,7 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   # Only allow a list of trusted parameters through.
