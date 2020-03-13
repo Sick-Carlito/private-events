@@ -40,7 +40,7 @@ Visit localhost:3000/events/new
 
 #### To view the created events
 ```
-Visit localhost:3000/events/index
+Visit localhost:3000 [this is the root path]
 ```
 
 Note: You must be signed in to create an event

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   match '/signup', to: 'users#new',             via: 'get'
 
   match '/events',  to: 'events#new', via: 'get'
+  #match '/allevents',  to: 'events#show', via: 'get'
   match '/events',  to: 'events#create', via: 'post'
   match '/user', to: 'users#show', via: 'get'
   # match '/index',  to: 'events#index',         via: 'get'
