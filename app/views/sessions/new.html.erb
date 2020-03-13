@@ -1,0 +1,9 @@
+<%= form_for :session, url: signin_path, method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Sign in" %>
+<% end %>

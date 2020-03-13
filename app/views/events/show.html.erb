@@ -1,0 +1,27 @@
+
+
+<h2> Event-name: </h2>
+<p><%= @event.name %> </p>
+
+<h2> Created by:</h2>
+<p><%= @event.creator.name %> </p>
+
+<h2> Event-description:</h2> 
+<p><%= @event.description %> </p>
+
+<h2> Event-date: </h2>
+<p><%= @event.date %> </p>
+
+<%= link_to 'Show all events', root_path%>
+
+
+<h2>Attendees</h2>
+<ul>
+  <% @att.each do |att| %>
+    <li><%= att.user.name %></li>
+  <% end %>
+</ul>
+
+
+<%= button_to "Attend Event", "/attendance?id=#{@event.id}", :method => :post %>
+
