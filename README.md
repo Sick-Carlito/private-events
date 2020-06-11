@@ -11,6 +11,14 @@ Things covered in the project:
 - Adding gems for extra features
 
 
+## Build with
+
+- Ruby 2.6.3
+- Rails 6.0.2
+- sqlite3 1.4
+- yarn bundler
+- Rspec-rails
+
 
 ## How to run this app
 To run it, clone this repository locally, and run these commands on your terminal.
@@ -45,19 +53,32 @@ Visit localhost:3000 [this is the root path]
 
 Note: You must be signed in to create an event
 
-## Build with
+### Run tests
 
-- Ruby 2.6.3
-- Rails 6.0.2
-- sqlite3 1.4
-- yarn bundler
-- Rspec-rails
+```
+    rpsec --format documentation
+```
+
+
 
 ## Author
 
 - [Carl](https://github.com/Sick-Carlito/private-events)
 
 
+#### Email
+carlb1319@gmail.com
+
+
 ## Acknowledgments
 
 - [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
