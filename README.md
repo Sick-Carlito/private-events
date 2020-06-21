@@ -20,7 +20,7 @@ Things covered in the project:
 - Rspec-rails
 
 
-## How to run this app
+## How to install and run this app
 To run it, clone this repository locally, and run these commands on your terminal.
 ```
 Git clone git@github.com:Sick-Carlito/private-events.git
@@ -68,6 +68,10 @@ Note: You must be signed in to create an event
 
 #### Email
 carlb1319@gmail.com
+
+- [LinkedIn](https://www.linkedin.com/in/carlb420/)
+
+- [Twitter](https://twitter.com/cbond_420)
 
 
 ## Acknowledgments
